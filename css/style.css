@@ -1,5 +1,573 @@
-h1 {
-	color: red;
-	border: 1px solid green;
-	display: flex;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: open sans;
+  font-weight: 400;
+  font-style: normal;
+  
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+}
+
+@font-face {
+  font-family: open sans;
+  font-weight: 700;
+  font-style: bold;
+  
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+}
+  
+body {
+  font-family: open sans;
+}
+
+.head-blog {
+  position: relative;
+  
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #000000;
+  
+  padding-top: 26px;  
+  padding-bottom: 100px; 
+  
+  z-index: 0; 
+}
+
+.head-blog::after {
+  content: "";
+  position: absolute;
+  
+  background-color: #000000;
+  opacity: 0.45;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  z-index: -1;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+}
+
+.logo {
+  width: 178px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-list-item {
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+  font-weight: normal;
+  font-size: 13px;
+  text-transform: uppercase;  
+}
+
+.menu-link {
+  color:#ffffff;
+  text-decoration: none;
+}
+
+.welcome-title {
+  width: 720px;
+  
+  line-height: 1.67;
+  font-weight: bold;
+  font-size: 45px;
+  text-align: center;
+  
+  color: #ffffff;
+
+  text-transform: uppercase;
+  
+  margin-top: 80px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.news {
+  display: flex;
+  justify-content: space-between;
+  
+  width: 1200px;
+  padding: 0 15px;
+  
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 64px;
+  margin-bottom: 64px;  
+}
+
+.news-card {
+  display: flex;
+  justify-content: space-between;
+ 
+  margin-right: 120px;
+  margin-bottom: 59px;
+}
+
+.image_block {
+  width: 381px; 
+}
+
+.card-image {
+  width: 100%;
+  
+  background-color:#000000;
+}
+
+.text_content {
+  width: 367px;
+  margin-left: 30px;
+  
+}
+
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.news-list-item {
+  display: flex;
+  margin-right: 20px;
+}
+
+.travel-posts, .health-posts, .fashion-posts, .music-posts, .lifestyle-posts, .art-posts, .interior-posts, .food-posts {
+  display: flex;
+  font-weight: bold;
+  font-size: 14px;
+  color: #b59f5b;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.news-name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  color:#0f0d0e;
+ 
+  margin-top: 16px;
+  margin-bottom: 30px;
+}
+
+.card-date {
+  font-weight: normal;
+  font-size: 12px;
+  color:#888888;
+  
+  margin-right: 12px;
+}
+
+.publication { 
+  margin-bottom: 50px;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 12px;
+  color:#000000;
+}
+
+.news-text { /*не работает параграф, не пойму что негативно влияет на это*/
+  font-size: 15px;
+  color:#0f0d0e;
+  line-height: 1.47;
+ 
+}
+
+.reset-Newslink { 
+  text-decoration: none;
+  text-transform: uppercase;
+  color:#0f0d0e;
+}
+
+.widget {
+  width: 100%;
+}
+
+.post-widget {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  padding-bottom: 8px;
+}
+
+.posts-head {
+  text-align: center;
+  
+  margin-bottom: 29px;
+}
+
+.widget-name {
+  font-weight: bold;
+  font-size: 14px;
+  color:#0f0d0e;
+  
+  margin-bottom: 12px;
+}
+
+.widget-name::after { /*сраный пробел*/
+  content:""; 
+  display: block;
+  
+  width: 66px;
+  height: 3px;
+  
+  background-color: #e1d9bd;
+  bottom: -15px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 14px;
+}
+
+.post-card {
+  display: flex;
+  justify-content: space-between;
+  
+  margin-bottom: 22px;
+}
+
+.post-image {
+  display: flex;
+  
+  width: 70px;
+}
+
+.post-card-image {
+  width: 100%;
+  
+  background-color:#000000;
+}
+
+.post-content {
+  display: flex;
+  
+  margin-left: 20px;
+  
+  width: 100%;
+}
+
+.post-publication {
+  display: flex;
+}
+
+.post-name {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+.reset-widgetlink { 
+  text-decoration: none;
+  text-transform: uppercase;
+  color:#000000;
+  
+}
+
+.finder {
+  position: relative;
+  
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.search-form-row { 
+  display: flex; 
+}
+
+.search-group {
+  width: 100%;
+}
+
+.searchfield {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.searchfield {
+  border: none;
+  
+  height: 48px;
+  width: 100%;
+  
+  padding-left: 18px;
+  padding-right: 18px;
+  
+  font-weight: normal;
+  font-size: 13px;
+  background-color: #f4f7f6;
+}
+
+.searchfield:focus {
+  outline: none;
+  border-color: #9b59b6;
+  
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.search-button {
+  flex: none;
+  cursor: pointer;
+  
+  height: 48px;
+  width: 48px;
+  border: none;
+  
+  background-image: url(https://netology-code.github.io/html-2-homeworks/form-elements/search-field/img/search.svg);
+  background-position: center center;
+  background-size: 18px;
+  background-color: #b59f5b;
+  background-repeat: no-repeat;
+}
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+} 
+
+.mailing {
+  text-align: center;
+  position: relative;
+  
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.mailing-form-row {
+  position: relative;
+}
+
+.mailing-head {
+  text-align: center;
+
+  margin-bottom: 29px;
+}
+
+.mailing-field {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  vertical-align: middle;
+  border: none;
+  
+  width: 100%;
+  height: 48px;
+  
+  padding-left: 18px;
+  padding-right: 18px;
+ 
+  font-weight: normal;
+  font-size: 13px;
+  background-color: #f4f7f6;
+}
+
+.mailing-field:focus {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.mailing-button {
+  position: relative;
+  cursor: pointer;
+  
+  height: 48px;
+  width: 100%;
+  border: none;
+  
+  margin-top: 16px;
+  
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  
+  background-size: 18px;
+  background-color: #b59f5b;
+  background-repeat: no-repeat;
+}
+
+.tags {
+  text-align: center;
+  position: relative;
+  
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tag-list-item {
+  display: flex;
+}
+
+.travel-tag, .health-tag, .fashion-tag, .music-tag, .lifestyle-tag, .art-tag, .interior-tag, .food-tag {
+  display: flex;
+  
+  font-weight: bold;
+  font-size: 12px;
+  color: #0f0d0e;
+  
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  padding-left: 14px;
+  padding-right: 14px;
+  
+  margin-right: 5px;
+  margin-bottom: 5px;
+  
+  border: 3px solid #eeeeee;
+}
+
+
+.topics {
+  text-align: center;
+  position: relative;
+  
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.topic-list-item {
+  text-align: left;
+  list-style-type: none;
+  height: 46px;
+  padding-top: 12px;
+  
+  border-bottom: 1px solid #eeeeee;
+}
+
+.beauty-topic, .health-topic, .sport-topic, .music-topic, .lifestyle-topic, .yoga-topic {
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000000;
+  
+  text-decoration: none;
+}
+
+.beauty-topic-number, .health-topic-number, .sport-topic-number, .music-topic-number, .lifestyle-topic-number, .yoga-topic-number {
+  vertical-align: text-top;
+  font-weight: bold;
+  font-size: 14px;
+  color: #b59f5b;
+  
+  text-decoration: none;
+}
+
+.social-bottoms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1200px;
+  
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 86px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 40px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  
+  padding-top: 30px;  
+  padding-bottom: 30px;
+  
+  Background-color: #f4f7f6;
+  
+  width: 100%;
+}
+
+.social-item {
+  display: flex;
+  
+  list-style-type: none;
+  
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.socials-icon {
+  width: 20px;
+  height: 20px;
+  
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+.socials-link-twitter {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg);
+}
+
+
+.socials-link-pinterest {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg);
+}
+
+.socials-link-facebook {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg);
+}
+
+.socials-link-instagram {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg);
+}
+
+.socials-link-tumblr {
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+}
+
+.socials-link-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px,1px,1px,1px);
+}
+
+.copyright {
+  display: flex;
+  
+  font-weight: bold;
+  font-size: 12px;
+  color: #999999;
+  
+  margin-top: 73px;
 }
